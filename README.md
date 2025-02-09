@@ -24,7 +24,7 @@ Um aplicativo distribuído para monitoramento de GPUs em rede local usando Zeroc
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/gpu-monitor.git
+git clone [nome_respositório]
 ```
 
 2. Instale as dependências:

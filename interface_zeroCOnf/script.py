@@ -72,11 +72,11 @@ class GPUClient(tk.Tk):
     def setup_gui(self):
         ttk.Label(self, text="Available GPUs", font=('Helvetica', 14)).pack(pady=10)
         
-        # Frame para a lista de GPUs
+        # Frame to list GPU
         self.gpu_frame = ttk.Frame(self)
         self.gpu_frame.pack(fill='both', expand=True, padx=10)
         
-        # Botões
+        # Button
         button_frame = ttk.Frame(self)
         button_frame.pack(fill='x', padx=10, pady=5)
         ttk.Button(button_frame, text="Refresh", command=self.update_gui).pack(side='left', padx=5)
@@ -98,7 +98,7 @@ class GPUClient(tk.Tk):
         for widget in self.gpu_frame.winfo_children():
             widget.destroy()
 
-        # Adiciona as informações de cada GPU
+        # Add information of gpu
         for name, info in self.services.items():
             frame = ttk.LabelFrame(self.gpu_frame, text=name)
             frame.pack(fill='x', pady=5)
@@ -111,7 +111,7 @@ class GPUClient(tk.Tk):
                 ttk.Label(frame, text=f"Load: {props.get('load', 'N/A')}%").pack()
                 ttk.Label(frame, text=f"Memory: {props.get('memory_used', 'N/A')}/{props.get('memory_total', 'N/A')} MB").pack()
                 ttk.Label(frame, text=f"Temperature: {props.get('temperature', 'N/A')}°C").pack()
-            except Exception as e:
+            except Exception as e: 
                 ttk.Label(frame, text=f"Error reading device: {str(e)}").pack()
 
     def start_browser(self):
